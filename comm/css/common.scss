@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900');
+
+@mixin trans($property: all, $duration: .15s, $timing: ease-in-out, $delay: 0s) {
+	-webkit-transition-property: $property;
+    transition-property: $property;
+	-webkit-transition-duration: $duration;
+    transition-duration: $duration;
+	-webkit-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+	-webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin transition($property: all, $duration: .15s, $timing: linear, $delay: 0s) {
+	-webkit-transition-property: $property;
+    transition-property: $property;
+	-webkit-transition-duration: $duration;
+    transition-duration: $duration;
+	-webkit-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+	-webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+$kcolor: #0a3787;
+
+@mixin noto() {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+@mixin rale() {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* 초기화 */
+
+h1, h2, h3,h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+ul, ol {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+dl {
+    margin-bottom: 0;
+}
+
+address {
+    margin-bottom: 0;
+}
+
+label {
+    font-weight: 400;
+    margin: 0;
+}
+dl {
+    margin: 0;
+    dt {
+        font-weight: 400;
+    }
+    dd {
+        margin: 0;
+        font-weight: 400;
+    }
+}
+
+i {
+    &:before {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+figure {
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px !important;
+}
+.container,
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+    .row {
+        overflow: hidden;
+        margin-left: -15px;
+        margin-right: -15px;
+        @for $i from 1 through 12 {
+            .col-#{$i},
+            .col-md-#{$i},
+            .col-lg-#{$i} {
+                float: left;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: none;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none !important;
+    outline: none !important;
+    &:hover, &:focus {
+        color: inherit;
+    }
+}
+
+.btn {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none !important;
+    @include transition();
+}
